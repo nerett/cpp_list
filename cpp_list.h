@@ -3,28 +3,32 @@
 
 
 #include "config.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 
 class CListElem
 {
-	private:
+	public: //нужно ли делать private?
 
-		list_element_t data;
+		list_element_t data_;
 
-		CListElem* next;
-		CListElem* prev;
+		CListElem* next_;
+		CListElem* prev_;
 
 	private:
 
 	public:
 
-		explicit CListElem();
+		explicit CListElem( list_element_t data = 0 );
 		~CListElem();
 
-		CListElem* insert_after();
-		CListElem* insert_before();
+		CListElem* insert_after( list_element_t data = 0 );
+		CListElem* insert_before( list_element_t data = 0 );
 
 		list_element_t pop();
+		list_element_t pop_before();
+		list_element_t pop_after();
 
 };
 
@@ -32,10 +36,10 @@ class CList
 {
 	private:
 
-		int capacity;
+		int capacity_;
 
-		CListElem* head;
-		CListElem* tail;
+		CListElem* head_;
+		CListElem* tail_;
 
 	private:
 
@@ -47,8 +51,8 @@ class CList
 		list_element_t pop_back();
 		list_element_t pop_front();
 
-		CListElem* insert_back();
-		CListElem* insert_front();
+		CListElem* insert_back( list_element_t data = 0 );
+		CListElem* insert_front( list_element_t data = 0 );
 };
 
 
