@@ -37,7 +37,7 @@ class CList
 	private:
 
 		int capacity_;
-
+public:
 		CListElem* fictional_;
 
 	private:
