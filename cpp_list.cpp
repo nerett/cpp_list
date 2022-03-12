@@ -93,7 +93,7 @@ printf( "CList Dtor\n" );
 printf( "capacity = %d\n", capacity_ );
 
 
-	CListElem* current_elem = fictional_;
+	CListElem* current_elem = fictional_->next_;
 	CListElem* delete_elem = NULL;
 
 	while( current_elem->next_ != current_elem )
@@ -101,12 +101,14 @@ printf( "capacity = %d\n", capacity_ );
 printf( "Eleme dtor round\n" );
 printf( "current elem = %p\n", current_elem );
 printf( "current elem next = %p\n", current_elem->next_ );
+printf( "current elem prev = %p\n", current_elem->prev_ );
 		if( current_elem )
 		{
 			delete_elem = current_elem;
-			delete_elem->pop();
 			current_elem = current_elem->next_;
-printf( "freed element with data_ = %d\n", current_elem->data_ );
+printf( "freed element with data_ = %d\n", delete_elem->data_ );
+			delete_elem->pop();
+			
 		}
 	}
 
