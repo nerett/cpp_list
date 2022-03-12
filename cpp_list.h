@@ -38,8 +38,7 @@ class CList
 
 		int capacity_;
 
-		CListElem* head_;
-		CListElem* tail_;
+		CListElem* fictional_;
 
 	private:
 

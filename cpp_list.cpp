@@ -71,26 +71,19 @@ list_element_t CListElem::pop_after()
 
 /*--------------------------FUNCTION----------------------------------------- */
 CList::CList():
-	capacity_ ( 0 ),
+	capacity_ ( 0 ), //т.к. фиктивный элемент не учитывается
 
-	head_ ( NULL ),
-	tail_ ( NULL )
+	fictional_ ( new CListElem( FICTIONAL_ELEM_DATA ) )
 {
-	CListElem* fictional_elem = new CListElem( FICTIONAL_ELEM_DATA );
-	head_ = fictional_elem; //фиктивный элемент
-	tail_ = fictional_elem;
-
-	capacity_++;
-
-	fictional_elem->next_ = fictional_elem;
-	fictional_elem->prev_ = fictional_elem;
+	fictional_->next_ = fictional_;
+	fictional_->prev_ = fictional_;
 }
 
 
 /*--------------------------FUNCTION----------------------------------------- */
 CList::~CList()
 {
-	CListElem* current_elem = head_;
+	CListElem* current_elem = fictional_;
 	CListElem* delete_elem = NULL;
 
 	while( capacity_ )
@@ -103,7 +96,7 @@ CList::~CList()
 		}
 	}
 
-	delete head_;
+	delete fictional_;
 }
 
 
@@ -111,7 +104,7 @@ CList::~CList()
 list_element_t CList::pop_back()
 {
 	capacity_--; //костыль
-	return tail_->prev_->pop();
+	return fictional_->prev_->pop();
 }
 
 
@@ -119,15 +112,15 @@ list_element_t CList::pop_back()
 list_element_t CList::pop_front()
 {
 	capacity_--; //костыль
-	return head_->next_->pop();
+	return fictional_->next_->pop();
 }
 
 
 /*--------------------------FUNCTION----------------------------------------- */
 CListElem* CList::insert_back( list_element_t data )
 {
-	tail_->insert_before( data ); //не логическая ошибка, т.к. tail и head указывают на фиктивный элемент
-	return tail_->prev_;
+	fictional_->insert_before( data ); //не логическая ошибка, т.к. tail и head указывают на фиктивный элемент
+	return fictional_->prev_;
 	capacity_++; //костыль
 }
 
@@ -135,7 +128,7 @@ CListElem* CList::insert_back( list_element_t data )
 /*--------------------------FUNCTION----------------------------------------- */
 CListElem* CList::insert_front( list_element_t data )
 {
-	head_->insert_after( data );
-	return head_->next_;
+	fictional_->insert_after( data );
+	return fictional_->next_;
 	capacity_++; //костыль
 }
