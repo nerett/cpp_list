@@ -1,8 +1,9 @@
 #include "cpp_list.h"
 
 
-			#define BACK
-			#define BACKWARDS
+#define BACK
+#define BACKWARDS
+
 
 int main()
 {
@@ -19,7 +20,7 @@ int main()
 	test_list.insert_back( 3 );
 #endif
 
-	CListElem* current_elem = test_list.fictional_;
+	CListElem* current_elem = test_list.fictional();
 	for( int i = 0; i < 10; i++ )
 	{
 		printf( "\n-------------------------------------------\n" );
@@ -40,7 +41,7 @@ int main()
 	printf( "\nPOP:\n" );
 	//test_list.pop_back();
 
-	current_elem = test_list.fictional_;
+	current_elem = test_list.fictional();
 	for( int i = 0; i < 10; i++ )
 	{
 		printf( "\n-------------------------------------------\n" );

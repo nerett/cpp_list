@@ -36,11 +36,7 @@ class CList
 {
 	private:
 
-		int capacity_;
-public:
 		CListElem* fictional_;
-
-	private:
 
 	public:
 
@@ -52,6 +48,8 @@ public:
 
 		CListElem* insert_back( list_element_t data = 0 );
 		CListElem* insert_front( list_element_t data = 0 );
+
+		CListElem* fictional();
 };
 
 
