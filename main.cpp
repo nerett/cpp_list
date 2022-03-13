@@ -1,8 +1,8 @@
 #include "cpp_list.h"
 
 
-#define BACK
-#define BACKWARDS
+//#define BACK
+//#define BACKWARDS
 
 
 int main()

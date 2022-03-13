@@ -77,8 +77,6 @@ list_element_t CListElem::pop_after()
 
 /*--------------------------FUNCTION----------------------------------------- */
 CList::CList():
-	//capacity_ ( 0 ), //т.к. фиктивный элемент не учитывается
-
 	fictional_ ( new CListElem( FICTIONAL_ELEM_DATA ) )
 {
 	fictional_->next_ = fictional_;
@@ -134,6 +132,7 @@ CListElem* CList::insert_front( list_element_t data )
 }
 
 
+/*--------------------------FUNCTION----------------------------------------- */
 CListElem* CList::fictional()
 {
 	return fictional_;

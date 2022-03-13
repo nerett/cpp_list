@@ -7,6 +7,7 @@
 #include <stdio.h>
 
 
+/*--------------------------CLASS-----------------------------------------*/
 class CListElem
 {
 	public: //нужно ли делать private?
@@ -16,11 +17,9 @@ class CListElem
 		CListElem* next_;
 		CListElem* prev_;
 
-	private:
-
 	public:
 
-		explicit CListElem( list_element_t data = 0 );
+		explicit CListElem( list_element_t data = 0 ); //!TODO константа для инициализации
 		~CListElem();
 
 		CListElem* insert_after( list_element_t data = 0 );
@@ -32,6 +31,8 @@ class CListElem
 
 };
 
+
+/*--------------------------CLASS-----------------------------------------*/
 class CList
 {
 	private:
