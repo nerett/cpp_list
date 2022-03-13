@@ -2,7 +2,6 @@
 #define CPP_LIST_H_INCLUDED
 
 
-#include "config.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -12,22 +11,23 @@ class CListElem
 {
 	public: //нужно ли делать private?
 
-		list_element_t data_;
+		char* word_;
+		int frequency_;
 
 		CListElem* next_;
 		CListElem* prev_;
 
 	public:
 
-		explicit CListElem( list_element_t data = 0 ); //!TODO константа для инициализации
+		explicit CListElem( const char* word ); //!TODO константа для инициализации
 		~CListElem();
 
-		CListElem* insert_after( list_element_t data = 0 );
-		CListElem* insert_before( list_element_t data = 0 );
+		CListElem* insert_after( const char* word );
+		CListElem* insert_before( const char* word );
 
-		list_element_t pop();
-		list_element_t pop_before();
-		list_element_t pop_after();
+		int pop();
+		int pop_before();
+		int pop_after();
 
 };
 
@@ -44,11 +44,11 @@ class CList
 		explicit CList();
 		~CList();
 
-		list_element_t pop_back();
-		list_element_t pop_front();
+		int pop_back();
+		int pop_front();
 
-		CListElem* insert_back( list_element_t data = 0 );
-		CListElem* insert_front( list_element_t data = 0 );
+		CListElem* insert_back( const char* word );
+		CListElem* insert_front( const char* word );
 
 		CListElem* fictional();
 };

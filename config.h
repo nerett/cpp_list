@@ -2,9 +2,11 @@
 #define CONFIG_H_INCLUDED
 
 
-typedef int list_element_t;
+#include <stdlib.h>
 
-const list_element_t FICTIONAL_ELEM_DATA = 0xAB0BA;
+
+//typedef char list_element_t;
+const char* FICTIONAL_ELEM_DATA = NULL;
 
 
 #endif //CONFIG_H_INCLUDED
