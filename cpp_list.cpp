@@ -136,7 +136,7 @@ CListElem* CList::insert_front( const char* word )
 
 
 /*--------------------------FUNCTION----------------------------------------- */
-CListElem* CList::fictional()
+CListElem* CList::fictional() const
 {
 	return fictional_;
 }

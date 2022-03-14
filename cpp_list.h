@@ -50,7 +50,7 @@ class CList
 		CListElem* insert_back( const char* word );
 		CListElem* insert_front( const char* word );
 
-		CListElem* fictional();
+		CListElem* fictional() const; //разобраться
 };
 
 
