@@ -5,12 +5,15 @@
 
 /*--------------------------FUNCTION----------------------------------------- */
 CListElem::CListElem( const char* word ):
-	word_ ( strdup( word ) ),
+	word_ ( NULL ),
+	frequency_( 0 ),
 
 	next_ ( NULL ),
 	prev_ ( NULL )
 {
+	assert( word );
 
+	word_ = strdup( word );
 }
 
 
