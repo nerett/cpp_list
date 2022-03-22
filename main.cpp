@@ -13,14 +13,14 @@ int main()
 
 
 #ifndef BACK
-	test_list.insert_front( "ajhfgjgajfjfa1" );
-	test_list.insert_front( "2" );
-	test_list.insert_front( "3" );
+	test_list.insert_front( "word1" );
+	test_list.insert_front( "word2" );
+	test_list.insert_front( "word3" );
 #endif
 #ifdef BACK
-	test_list.insert_back( "1" );
-	test_list.insert_back( "2" );
-	test_list.insert_back( "3" );
+	test_list.insert_back( "word1" );
+	test_list.insert_back( "word2" );
+	test_list.insert_back( "word3" );
 #endif
 
 	CListElem* current_elem = test_list.fictional();
@@ -32,6 +32,7 @@ int main()
 		printf( "current_elem prev = %p\n", current_elem->prev_ );
 
 		printf( "current_elem data = %s\n", current_elem->word_ );
+		printf( "current_elem frequency = %d\n", current_elem->frequency_ );
 
 #ifndef BACKWARDS
 		current_elem = current_elem->next_;
@@ -53,6 +54,7 @@ int main()
 		printf( "current_elem prev = %p\n", current_elem->prev_ );
 
 		printf( "current_elem data = %s\n", current_elem->word_ );
+		printf( "current_elem frequency = %d\n", current_elem->frequency_ );
 
 #ifndef BACKWARDS
 		current_elem = current_elem->next_;
