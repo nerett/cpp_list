@@ -141,3 +141,17 @@ CListElem* CList::fictional() const
 {
 	return fictional_;
 }
+
+
+/*--------------------------FUNCTION----------------------------------------- */
+CListElem* CList::head() const
+{
+	return fictional_->next_;
+}
+
+
+/*--------------------------FUNCTION----------------------------------------- */
+CListElem* CList::tail() const
+{
+	return fictional_->prev_;
+}

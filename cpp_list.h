@@ -52,6 +52,8 @@ class CList
 		CListElem* insert_front( const char* word );
 
 		CListElem* fictional() const; //разобраться
+		CListElem* head() const;
+		CListElem* tail() const;
 };
 
 
