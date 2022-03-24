@@ -18,7 +18,8 @@ CListElem::CListElem( const char* word ):
 /*--------------------------FUNCTION----------------------------------------- */
 CListElem::~CListElem()
 {
-
+	free( word_ );
+	//delete word_;
 }
 
 
@@ -59,7 +60,6 @@ int CListElem::pop()
 	next_->prev_ = prev_;
 
 	int return_value = this->frequency_;
-	free( word_ );
 	delete this;
 
 	return return_value;
